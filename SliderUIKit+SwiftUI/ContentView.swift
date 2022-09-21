@@ -15,10 +15,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack (spacing: 16){
-            Text("Подвиньте следер как можно ближе к: " +  lround(targetValue).formatted())
-            
+            Text("Подвиньте слайдер, как можно ближе к: " +  lround(targetValue).formatted())
             SliderView(value: $currentValue, targetValue: $targetValue)
-            
             Button(action: {showAlert.toggle()}) {
                 Text("Проверь меня!")
             }
