@@ -12,13 +12,13 @@ struct ContentView: View {
     @State private var currentValue = 50.0
     @State private var targetValue = 10.0
     @State private var showAlert = false
-    @EnvironmentObject private var valueTransmitter: TargetValueTransmitter
     
     var body: some View {
         VStack (spacing: 16){
             Text("Подвиньте следер как можно ближе к: " +  lround(targetValue).formatted())
-        
-            SliderView(value: $currentValue)
+            
+            SliderView(value: $currentValue, targetValue: $targetValue)
+            
             Button(action: {showAlert.toggle()}) {
                 Text("Проверь меня!")
             }
@@ -40,7 +40,6 @@ extension ContentView {
 
     private func restart() {
         targetValue = Double.random(in: 1...100)
-        valueTransmitter.targetValue = targetValue
     }
     
     private func computeScore() -> Int {
@@ -51,11 +50,12 @@ extension ContentView {
 
 struct SliderView: View {
     @Binding var value: Double
+    @Binding var targetValue: Double
 
     var body: some View {
         HStack {
             Text("0")
-            SliderUIKitView(value: $value)
+            SliderUIKitView(value: $value, targetValue: $targetValue)
             Text("100")
         }
     }
