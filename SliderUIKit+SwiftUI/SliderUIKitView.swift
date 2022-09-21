@@ -10,11 +10,10 @@ import SwiftUI
 struct SliderUIKitView: UIViewRepresentable {
     
     @Binding var value: Double
-
-    @EnvironmentObject private var targetValueTransmitter: TargetValueTransmitter
+    @EnvironmentObject private var valueTransmitter: TargetValueTransmitter
     
     private func computeScore() -> Int {
-        let difference = abs(Int(targetValueTransmitter.targetValue) - lround(value))
+        let difference = abs(Int(valueTransmitter.targetValue) - lround(value))
         return 100 - difference
     }
     
@@ -62,6 +61,6 @@ extension SliderUIKitView {
 
 struct SliderUIKitView_Previews: PreviewProvider {
     static var previews: some View {
-        SliderUIKitView(value: .constant(100), targetValue: .constant(1.0))
+        SliderUIKitView(value: .constant(100))
     }
 }

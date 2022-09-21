@@ -57,8 +57,8 @@
 			children = (
 				E08FCDCE28D8AC0900D1BB5C /* SliderUIKit_SwiftUIApp.swift */,
 				E08FCDD028D8AC0900D1BB5C /* ContentView.swift */,
-				E0E350FE28DA8C6500113AFD /* TargetValueTransmitter.swift */,
 				E08FCDDC28D8AC2900D1BB5C /* SliderUIKitView.swift */,
+				E0E350FE28DA8C6500113AFD /* TargetValueTransmitter.swift */,
 				E08FCDD228D8AC0A00D1BB5C /* Assets.xcassets */,
 				E08FCDD428D8AC0A00D1BB5C /* Preview Content */,
 			);
