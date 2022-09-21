@@ -12,6 +12,7 @@
 		E08FCDD328D8AC0A00D1BB5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08FCDD228D8AC0A00D1BB5C /* Assets.xcassets */; };
 		E08FCDD628D8AC0A00D1BB5C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08FCDD528D8AC0A00D1BB5C /* Preview Assets.xcassets */; };
 		E08FCDDD28D8AC2900D1BB5C /* SliderUIKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08FCDDC28D8AC2900D1BB5C /* SliderUIKitView.swift */; };
+		E0E350FF28DA8C6500113AFD /* TargetValueTransmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E350FE28DA8C6500113AFD /* TargetValueTransmitter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		E08FCDD228D8AC0A00D1BB5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E08FCDD528D8AC0A00D1BB5C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E08FCDDC28D8AC2900D1BB5C /* SliderUIKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderUIKitView.swift; sourceTree = "<group>"; };
+		E0E350FE28DA8C6500113AFD /* TargetValueTransmitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetValueTransmitter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				E08FCDCE28D8AC0900D1BB5C /* SliderUIKit_SwiftUIApp.swift */,
 				E08FCDD028D8AC0900D1BB5C /* ContentView.swift */,
+				E0E350FE28DA8C6500113AFD /* TargetValueTransmitter.swift */,
 				E08FCDDC28D8AC2900D1BB5C /* SliderUIKitView.swift */,
 				E08FCDD228D8AC0A00D1BB5C /* Assets.xcassets */,
 				E08FCDD428D8AC0A00D1BB5C /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08FCDD128D8AC0900D1BB5C /* ContentView.swift in Sources */,
+				E0E350FF28DA8C6500113AFD /* TargetValueTransmitter.swift in Sources */,
 				E08FCDDD28D8AC2900D1BB5C /* SliderUIKitView.swift in Sources */,
 				E08FCDCF28D8AC0900D1BB5C /* SliderUIKit_SwiftUIApp.swift in Sources */,
 			);

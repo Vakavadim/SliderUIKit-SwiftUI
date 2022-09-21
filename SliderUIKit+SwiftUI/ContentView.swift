@@ -10,18 +10,18 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var currentValue = 50.0
-    @State private var targetValue = Int.random(in: 1...100)
-
+    @State private var targetValue = 10.0
+    @State private var showAlert = false
+    
+    @EnvironmentObject private var targetValueTransmitter: TargetValueTransmitter
     
     var body: some View {
-        
         VStack (spacing: 16){
-            HStack{
-                Text("Подвиньте следер как можно к:")
-                Text(targetValue.formatted())
-            }
-            SliderView(value: $currentValue, opacity: $targetValue)
-            Button(action: {}) {
+            Text("Подвиньте следер как можно ближе к: " +  lround(targetValue).formatted())
+            Text(lround(currentValue).formatted())
+        
+            SliderView(value: $currentValue, targetValue: $targetValue)
+            Button(action: {showAlert.toggle()}) {
                 Text("Проверь меня!")
             }
             Button(action: restart) {
@@ -29,30 +29,38 @@ struct ContentView: View {
             }
         }
         .padding()
+        .onAppear{
+            restart()
+        }
+        .alert("Your scoore", isPresented: $showAlert, actions: {}) {
+            Text(computeScore().formatted())
+        }
     }
 }
 
 extension ContentView {
+
     private func restart() {
-        self.targetValue = Int.random(in: 1...100)
+        targetValue = Double.random(in: 1...100)
+        targetValueTransmitter.targetValue = targetValue
     }
     
     private func computeScore() -> Int {
-        let difference = abs(targetValue - lround(currentValue))
+        let difference = abs(Int(targetValue) - lround(currentValue))
         return 100 - difference
     }
 }
 
 struct SliderView: View {
     @Binding var value: Double
-    @Binding var opacity: Int
-    
+    @Binding var targetValue: Double
+
     var body: some View {
         HStack {
             Text("0")
-            SliderUIKitView(value: $value)
+            SliderUIKitView(value: $value, targetValue: $targetValue)
             Text("100")
-        }.opacity((100-(value-Double(opacity)))/100)
+        }
     }
 }
 

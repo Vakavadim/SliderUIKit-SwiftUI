@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SliderUIKit_SwiftUIApp: App {
+    @StateObject private var currentValueTransmitter = TargetValueTransmitter()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(currentValueTransmitter)
         }
     }
 }
